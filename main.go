@@ -8,6 +8,7 @@ import (
 
 func main() {
    http.HandleFunc("/paste", routes.CreateNewPaste)
-   fmt.Println("Server is running on PORT :8080")
+   http.HandleFunc("/getPaste", routes.GetPaste)
+   fmt.Println("server is starting at 8080")
    http.ListenAndServe(":8080", nil)
 }
